@@ -1,0 +1,22 @@
+{
+  "name": "h5movie",
+  "version": "0.0.0",
+  "authors": [
+    "King Chung <kingchung@outlook.com>"
+  ],
+  "description": "Html5 page about movie",
+  "main": "index.html",
+  "keywords": [
+    "movie",
+    "shanghai"
+  ],
+  "license": "MIT",
+  "homepage": "kingchung.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

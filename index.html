@@ -1,0 +1,123 @@
+<!DOCTYPE html lang="zh-CN">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>复古单身派对</title>
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <style type="text/css">
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-width: 320px;
+        height: 100%;
+        overflow: hidden;
+        font: 14px/1.2em Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
+        color: #fff;
+        background-color: #2D3132
+    }
+
+    .hide {
+    	visibility: hidden;
+    }
+
+    .text-center {
+    	text-align: center;
+    }
+    
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-width: 320px;
+        overflow: hidden;
+        background-color: #2D3132;
+    }
+    
+    .wrapper .page {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #000;
+        color: #fff;
+    }
+    
+    .jumper {
+        position: fixed;
+        left: 50%;
+    	margin-left: -12px;
+        color: #fff;
+        bottom: 20px;
+    }
+    </style>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/halo.js/halo.js"></script>
+    <script type="text/javascript">
+        // halo.use('loadimg', function(m){
+        // 	m.loadimg(['images/arrow-up.png', 'images/qr.png'], '#179E79',function(){
+        //         console.log(123123);
+        // 	});
+        // })
+    </script>
+</head>
+<body>
+    <div id="wrap" class="wrapper">
+        <section class="page text-center">
+        	<h1 class="animated bounceInDown">我是电影一</h1>
+        	<hr style="width: 80%" class="animated pulse">
+        	<p>
+        		
+        	</p>
+        </section>
+        <section class="page">
+            <h3 class="_title hide">我是电影Page2</h3>
+        	<p class="_description hide">123123123</p>
+        </section>
+        <section class="page">
+            <h3 class="_title hide">我是电影Page3</h3>
+        	<p class="_description hide">6567567</p>
+        </section>
+        <section class="page">
+            <h3 class="_title hide">我是电影Page4</h3>
+        	<p class="_description hide">aaaaaa</p>
+        </section>
+        <section class="page">
+            <p class="text-center animated zoomIn">
+            	<img src="images/qr.png" alt="QR Code">
+            </p>
+        </section>
+    </div>
+    <footer>
+	    <a href="javascript:;" id="jump" class="jumper animated infinite fadeInUp">
+	    	<img src="images/arrow-up.png" alt="arrow" height="10">
+	    </a>
+    </footer>
+    <script type="text/javascript">
+    halo.use('uievent', 'pageinvite', function(m) {
+        var wrap = document.getElementById("wrap");
+        var pager = m.pageinvite.bind(wrap);
+        pager.infinite = false;
+        var jump = document.getElementById("jump");
+        m.on(jump, 'flick', function() {
+            pager.move(0);
+        });
+        pager.setAuthor("Powered By KingChung");
+        pager.page_change = function(cur, next){
+        	var $page = $('.page').eq(next);
+        	$page.find('._title').removeClass('hide').addClass('animated fadeInLeft');
+        	setTimeout(function(){
+        		$page.find('._description').removeClass('hide').addClass('animated fadeInRight');
+        	}, 1000);
+        }
+    });
+    </script>
+</body>
+
+</html>
