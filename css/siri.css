@@ -255,3 +255,134 @@ body {
     z-index: 999;
     opacity: 0.4;
 }
+
+
+/* Custom */
+
+p,
+ul {
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.media-left,
+.media-right,
+.media-body {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.media-heading {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+
+.media-left img,
+.media-right img  {
+    width: 3em;
+    height: 3em;
+}
+
+.media-body {
+    padding-left: 1em;
+    font-size: 0.8em;
+}
+
+.siri-list {
+    list-style: none;
+    color: #fff;
+    font-size: 3em;
+    padding: 1em 1.5em;
+}
+
+.siri-list .item {
+    position: relative;
+    display: none;
+}
+
+.siri-list .item-siri .msg {
+    border-bottom-left-radius: 0;
+}
+
+.siri-list .item-owner .msg {
+    border-bottom-right-radius: 0;
+}
+
+.siri-list .msg {
+    position: relative;
+    padding: 0.4em 0.7em;
+    border: 2px solid #5b5c61;
+    border-radius: 0.5em;
+    margin-bottom: 0.8em;
+    background: #292a2f;
+}
+
+.siri-list .item .arrow,
+.siri-list .item .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.siri-list .item-siri .arrow {
+    bottom: 0;
+    left: -0.8em;
+    border-bottom-color: #5b5c61;
+    border-width: 0.8em;
+}
+
+.siri-list .item-siri .arrow:after {
+    border-width: 0.8em;
+    left: -0.7em;
+    bottom: -0.75em;
+    content: " ";
+    border-bottom-color: #292a2f;
+    border-right-width: 0;
+    z-index: 10;
+}
+
+.siri-list .item-owner .arrow {
+    bottom: 0;
+    right: -0.8em;
+    border-bottom-color: #5b5c61;
+    border-width: 0.8em;
+}
+
+.siri-list .item-owner .arrow:after {
+    border-width: 0.8em;
+    right: -0.7em;
+    bottom: -0.75em;
+    content: " ";
+    border-bottom-color: #292a2f;
+    border-left-width: 0;
+    z-index: 10;
+}
+
+.siri-list .media {
+    border: 2px solid #5b5c61;
+    padding: 1em;
+    border-radius: 0.6em;
+    background: #292a2f;
+}
+
+.siri-list .finger {
+    display: none;
+    position: absolute;
+    top: 4em;
+    left: 0.5em;
+}
+
+.siri-list .finger img {
+    width: 3em;
+}
+
+#siri .animated {
+    animation-duration: 1.5s;
+}

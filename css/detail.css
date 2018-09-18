@@ -1,0 +1,64 @@
+#detail {
+	font-family: 微软雅黑, sans-serif;
+    width: 100%;
+    padding-top: 0.5em;
+    padding-left: 0;
+    font-size: 3em;
+    text-align: center;
+    background: url("../images/paper.png");
+}
+
+#detail .detail-wrapper {
+    background-size: 4em;
+    padding-top: 3em;
+	background: url("../images/top_left.svg") left top no-repeat, url("../images/top_right.svg") right top no-repeat, url("../images/bottom_left.svg") left bottom no-repeat, url("../images/bottom_right.svg") right bottom no-repeat;
+	background-size: 4em;
+}
+
+#detail p {
+	/*margin: 1em;*/
+}
+
+#detail .detail-wrapper > h1 {
+	border: 0.1em double #d2c1b4;
+    width: 80%;
+    margin: 1em auto 0.5em;
+}
+
+#detail .act-detail {
+    position: absolute;
+    background: rgb(227, 108, 9);
+    color: #fff;
+    padding: 0.2em 0.5em;
+    top: 1em;
+    left: -0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    font-size: 0.8em;
+}
+
+#detail .act-detail:after {
+	display: block;
+    content: " ";
+    border-width: 0.3em;
+    border-color: rgb(227, 108, 9);
+    position: absolute;
+    top: 1.8em;
+    left: 0;
+    width: 0;
+    border-style: solid;
+    height: 0;
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+}
+
+#detail .description {
+    list-style: none;
+    font-size: 0.8em;
+    padding: 1em 3em 3.5em;
+    text-align: left;
+}
+
+#detail .description p {
+	margin-bottom: 1em;
+}

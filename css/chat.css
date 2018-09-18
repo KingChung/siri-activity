@@ -1,0 +1,157 @@
+.media-right {
+    float: right;
+}
+
+#wechat {
+    font-family: -apple-system, 苹方-简, 'helvetica neue';
+    height: 100%;
+    width: 100%;
+    background: #ebebeb;
+    padding-top: 0.5em;
+    padding-left: 0;
+    font-size: 3em;
+}
+
+.chat-list {
+    list-style: none;
+    padding: 0 0.8em;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.chat-list .time-wrapper {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    color: #fff;
+}
+
+.chat-list .time {
+    background: #d4d4d4;
+    padding: 0.3em 0.5em;
+    font-size: 0.8em;
+    border-radius: 0.3em;
+}
+
+.chat-list .message {
+    margin-bottom: 0.8em;
+    display: none;
+}
+
+.chat-list .message .name {
+    font-size: 1em;
+    color: #a7a7a7;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.chat-list .message .content {
+    display: inline-block;
+    color: #000;
+    border: 1px solid #D9D9D9;
+    padding: 0.6em 0.5em;
+    background: #fff;
+    border-radius: 0.3em;
+    font-size: 1.1em;
+}
+
+.chat-list .message .image img {
+    width: 15em;
+}
+
+.message .arrow,
+.message .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.message .arrow-left {
+    left: 2.8em;
+    top: 1.8em;
+    border-right-color: #D9D9D9;
+    border-width: 0.5em;
+}
+
+.message .arrow-left:after {
+    border-width: 0.8em;
+    left: 0.1em;
+    top: -0.8em;
+    content: " ";
+    border-right-color: #fff;
+    border-left-width: 0;
+}
+
+.message .arrow-right {
+    right: 2.8em;
+    top: 2em;
+    border-left-color: #D9D9D9;
+    border-width: 0.5em;
+}
+
+.message .arrow-right:after {
+    border-width: 0.8em;
+    right: 0.1em;
+    top: -0.8em;
+    content: " ";
+    border-left-color: #fff;
+    border-right-width: 0;
+}
+
+.message.my-message .arrow-right:after {
+    border-left-color: #b2e281;
+}
+
+.message.my-message .media-body {
+    float: right;
+    margin-top: 1.5em;
+    padding-right: 1em;
+    padding-left: 0;
+}
+
+.message.my-message .content {
+    background: #b2e281;
+}
+
+.message .sharelink .media-heading {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+}
+
+.message .sharelink .media-body {
+    height: 5em;
+    color: #55585b;
+}
+
+#wechat .media-left img, 
+#wechat .media-right img {
+    width: 2.2em;
+    height: 2.2em;
+}
+
+#wechat footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #f5f5f7;
+}
+
+#wechat footer img {
+    width: 100%;
+}
+
+#wechat footer .input {
+    display: block;
+    position: relative;
+}
+
+#wechat footer .text {
+    position: absolute;
+    color: #000;
+    top: 1em;
+    left: 3em;
+}

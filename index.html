@@ -1,121 +1,433 @@
-<!DOCTYPE html lang="zh-CN">
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <title>复古单身派对</title>
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <title>单身散场，恋爱未央</title>
     <style type="text/css">
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        min-width: 320px;
-        height: 100%;
-        overflow: hidden;
-        font: 14px/1.2em Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
-        color: #fff;
-        background-color: #2D3132
-    }
-
-    .hide {
-    	visibility: hidden;
-    }
-
-    .text-center {
-    	text-align: center;
-    }
-    
     .wrapper {
-        position: relative;
-        width: 100%;
         height: 100%;
-        min-width: 320px;
-        overflow: hidden;
-        background-color: #2D3132;
+        width: 100%;
     }
     
-    .wrapper .page {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background-color: #000;
-        color: #fff;
+    .clearfix:after {
+        content: " ";
+        clear: both;
+        display: table;
     }
     
-    .jumper {
-        position: fixed;
-        left: 50%;
-    	margin-left: -12px;
-        color: #fff;
-        bottom: 20px;
+    .page {
+        display: none;
+    }
+    
+    .show {
+        display: block;
     }
     </style>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="js/halo.js/halo.js"></script>
-    <script type="text/javascript">
-        // halo.use('loadimg', function(m){
-        // 	m.loadimg(['images/arrow-up.png', 'images/qr.png'], '#179E79',function(){
-        //         console.log(123123);
-        // 	});
-        // })
-    </script>
 </head>
+
 <body>
     <div id="wrap" class="wrapper">
-        <section class="page text-center">
-        	<h1 class="animated bounceInDown">我是电影一</h1>
-        	<hr style="width: 80%" class="animated pulse">
-        	<p>
-        		
-        	</p>
+        <section id="loading" style="background: #d2c1b4;height: 100%;text-align: center;font-size: 3em;color: #fff;">
+            <p class="" style="padding-top: 80%;">趁这点时间我们来思考一下人生...</p>
         </section>
-        <section class="page">
-            <h3 class="_title hide">我是电影Page2</h3>
-        	<p class="_description hide">123123123</p>
+        <link rel="stylesheet" type="text/css" href="css/siri.css">
+        <audio id="audio" src="sounds/siri.mp3"></audio>
+        <script type='text/javascript' src='bower_components/jquery/dist/jquery.min.js'></script>
+        <script>
+            setTimeout(() => {
+                $('#loading').fadeOut(function(){
+                    	$('#siri').fadeIn();
+                    }) 
+            }, 2e3)
+        </script>
+        <section id="siri" class="page">
+            <div>
+                <ul class="siri-list">
+                    <li class="item item-siri" data-type="siri">
+                        <span class="arrow"></span>
+                        <p class="msg">您好，请问需要什么帮忙？</p>
+                    </li>
+                    <li class="item item-owner" data-type="owner">
+                        <span class="arrow"></span>
+                        <p class="msg msg-owner">"双十一有什么节目？"</p>
+                    </li>
+                    <li class="item item-siri" data-type="siri">
+                        <span class="arrow"></span>
+                        <p class="msg">
+                            <span class="_dot animated fadeIn">.</span>
+                            <span class="_dot animated fadeIn">.</span>
+                            <span class="_dot animated fadeIn">.</span>
+                        </p>
+                    </li>
+                    <li class="item item-siri" data-type="siri">
+                        <span class="arrow"></span>
+                        <p class="msg">
+                            找到一个双十一相亲派对微信交流群：
+                        </p>
+                    </li>
+                    <li class="item item-siri" data-type="siri">
+                        <div id="jump" class="media">
+                            <a class="media-left" href="javascript:;">
+                                <img src="images/tc.jpg" alt="WeChat">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">双十一单身交流群</h4> 单身散场，恋爱未央。双十一复古电影单身派对500人交流群。
+                            </div>
+                        </div>
+                        <!-- <a href="javascript:;" class="finger animated fadeIn infinite">
+                            <img src="images/finger.png" alt="finger">
+                        </a> -->
+                    </li>
+                </ul>
+            </div>
+            <footer>
+                <div class="siri-wrapper">
+                    <div class="siri">
+                        <div class="brapper">
+                            <div class="ring"></div>
+                            <div class="inner-circle"></div>
+                            <div class="inner-circle ic2"></div>
+                            <div class="inner-circle ic3"></div>
+                            <div class="white-highlight wh1"></div>
+                            <div class="white-highlight wh2"></div>
+                            <div class="white-highlight wh3"></div>
+                            <div class="glare-top"></div>
+                            <div class="glare-bottom"></div>
+                            <div class="holes">
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                    <div class="hole"></div>
+                                </div>
+                            </div>
+                            <div class="u"></div>
+                            <div class="stem"></div>
+                            <div class="base"></div>
+                            <div class="mic"></div>
+                            <div class="back"></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <script type='text/javascript' src='js/siri.js'></script>
         </section>
-        <section class="page">
-            <h3 class="_title hide">我是电影Page3</h3>
-        	<p class="_description hide">6567567</p>
+        <link rel="stylesheet" type="text/css" href="css/chat.css">
+        <section id="wechat" class="page">
+            <ul class="chat-list chat_list">
+                <li>
+                    <div class="time-wrapper">
+                        <span class="time">下午 14:00</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="media message" data-type="role" style="position: relative;">
+                        <a class="media-left" href="javascript:;">
+                            <img class="media-object" src="images/zxx.jpg" alt="Image" width="40" height="40">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading name">周星星</h4>
+                            <span class="arrow arrow-left"></span>
+                            <p class="content">曾经，有一个复古电影单身派对邀请摆在我的面前，我没有珍惜。直到我失去以后，才追悔莫及，人世间最大的痛苦莫过于如此。</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="media message" data-type="role" style="position: relative;">
+                        <a class="media-left" href="javascript:;">
+                            <img class="media-object" src="images/zx.jpg" alt="Image" width="40" height="40">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading name">紫霞BB</h4>
+                            <span class="arrow arrow-left"></span>
+                            <p class="content">
+                                BB,这次由翼支付举办的复古电影单身派对就不要错过啦，我也会出现喔！
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="media message" data-type="role" style="position: relative;">
+                        <a class="media-left" href="javascript:;">
+                            <img class="media-object" src="images/sam.jpg" alt="Image" width="40" height="40">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading name">SamGor</h4>
+                            <span class="arrow arrow-left"></span>
+                            <p class="content">
+                                Oh my love my darling~
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="media message" data-type="role" style="position: relative;">
+                        <a class="media-left" href="javascript:;">
+                            <img class="media-object" src="images/molly.jpg" alt="Image" width="40" height="40">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading name">Molly</h4>
+                            <span class="arrow arrow-left"></span>
+                            <p class="content">
+                                亲爱的，我们到派对再唱吧～
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="media message" data-type="role" style="position: relative;">
+                        <a class="media-left" href="javascript:;">
+                            <img class="media-object" src="images/jack.jpg" alt="Image" width="40" height="40">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading name">杰克Jack</h4>
+                            <span class="arrow arrow-left"></span>
+                            <p class="content">
+                                Rose, 你去复古电影单身派对吗？
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="media message" data-type="role" style="position: relative;">
+                        <a class="media-left" href="javascript:;">
+                            <img class="media-object" src="images/rose.jpg" alt="Image" width="40" height="40">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading name">Rose</h4>
+                            <span class="arrow arrow-left"></span>
+                            <p class="content">
+                                去！去！去！（重要的事情说三遍）
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix" style="margin-bottom: 1em;">
+                    <div class="media message my-message" data-type="client" style="position: relative;">
+                        <a class="media-right" href="javascript:;">
+                            <img class="media-object" src="images/wp.jpg" alt="Image" width="40" height="40">
+                        </a>
+                        <div class="media-body">
+                            <span class="arrow arrow-right"></span>
+                            <p class="content">我也要参加！！</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="media message" data-type="host" style="position: relative;">
+                        <a class="media-left" href="javascript:;">
+                            <img class="media-object" src="images/tc.jpg" alt="Image" width="40" height="40">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading name">翼支付</h4>
+                            <div class="sharelink content _sharelink">
+                                <h4 class="media-heading">双十一复古电影单身派对</h4>
+                                <div class="media">
+                                    <a class="media-left" href="javascript:;">
+                                        <img src="images/tc.jpg" alt="wechat">
+                                    </a>
+                                    <div class="media-body">
+                                        <p>双十一翼支付约单身的你来一场有关复古电影的爱情记忆</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-wrapper" style="text-align: left;">
+                                <span class="time">
+			                    	翼支付
+			                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <footer>
+                <a href="javascript:;" class="input _form">
+                    <img src="images/input.png" alt="input" class="_input">
+                    <img src="images/keyboard.png" alt="keyboard" class="keyboard hide _text" style="margin-top: -0.2em;">
+                    <span class="text _text hide">我也要参加！！</span>
+                </a>
+            </footer>
         </section>
-        <section class="page">
-            <h3 class="_title hide">我是电影Page4</h3>
-        	<p class="_description hide">aaaaaa</p>
-        </section>
-        <section class="page">
-            <p class="text-center animated zoomIn">
-            	<img src="images/qr.png" alt="QR Code">
-            </p>
+        <link rel="stylesheet" type="text/css" href="css/detail.css">
+        <section id="detail" class="page">
+            <div class="detail-wrapper">
+                <h1><span style="color: rgb(227, 108, 9);">翼支付</span>邀您脱单</h1>
+                <div style="font-size: 0.8em;position: relative;height: 10em;">
+                    <p class="poem" style="position: absolute;top: -1em;left: 5em;opacity: 0;"><span style="font-size: 2.5em;">秋</span>意浓</p>
+                    <p class="poem" style="position: absolute;left: 11em;top: -1em;opacity: 0;"><span style="font-size: 2.5em;">月</span>半圆</p>
+                    <p class="poem" style="position: absolute;right: 4em;top: -1em;opacity: 0;"><span style="font-size: 2.5em;">花</span>正香</p>
+                    <p class="poem_content" style="font-size: 1.3em;position: absolute;left: 50%;margin-left: -7em;bottom: -0.5em;opacity: 0">一场复古电影单身派对正要启幕～</p>
+                </div>
+                <div style="margin-bottom: 1em;">
+                    <p style="text-align: left;padding-left: 5em;"><em style="color: #cb4042;font-weight: bolder;font-size: 1.5em;">红包</em>免费抢</p>
+                    <p style="text-align: right;padding-right: 5em;"><em style="color: #86c166;font-weight: bolder;font-size: 1.5em;">美食</em>免费尝</p>
+                    <p style="text-align: left;padding-left: 5em;"><em style="color: #FB966E;font-weight: bolder;font-size: 1.5em;">玫瑰</em>免费领</p>
+                    <p style="text-align: right;padding-right: 5em;"><em style="color: #bdc0da;font-weight: bolder;font-size: 1.5em;">电影</em>免费看</p>
+                    <p style="margin-top: 0.8em; font-size: 0.8em;">所有一切统统<em style="background: #cb4042;color: #fff;padding: 0 0.3em;font-size: 1.5em;">免费</em>
+                        <br>一切只为单身的您，还不来？</p>
+                </div>
+                <div style="position: relative;">
+                    <img src="images/roma.jpg" alt="Roma" style="width: 80%;">
+                    <span class="_speaking" style="position: absolute;left: 1em;top: 3em;color: rgb(249, 163, 104);font-size: 1.7em;">
+				                	真得吗？
+				                </span>
+                    <span class="_speaking hide" style="position: absolute;top: 2em;right: 0;color: #2ea9df;font-size: 1.6em;">
+                	来就知道啦～
+                </span>
+                </div>
+                <p style="margin-top: 2em;border-bottom: 0.1em solid rgb(227, 108, 9);width: 60%;margin: 1em auto 0;">立即点击参加</p>
+                <div style="width: 30%;height: 0.2em;background: rgb(227, 108, 9);margin: -1px auto 0;"></div>
+                <div style="text-align: center; padding: 1em 0;">
+                    <img src="images/qr.png" alt="QR Code" style="display: inline-block; z-index: 1000;width: 30%; height: 30%;">
+                </div>
+                <p style="margin-top: 2em;border-bottom: 0.1em solid rgb(227, 108, 9);width: 60%;margin: 1em auto 0;">双十一复古电影单身派对</p>
+                <div style="width: 30%;height: 0.2em;background: rgb(227, 108, 9);margin: -1px auto 0;"></div>
+                <p style="font-size: 0.8em;">2015年11月11日</p>
+                <div style="text-align: left;width: 60%;margin: 1em auto;font-size: 1em;">
+                    <p style="margin-bottom: 1em;background: #d2c1b4;color: #fff;padding: 0 0.5em;">地点：广州大学商业中心</p>
+                    <p style="margin-bottom: 1em;background: #d2c1b4;color: #fff;padding: 0 0.5em;">时间：17:30 － 21:30</p>
+                </div>
+                <p style="margin-top: 2em;border-bottom: 0.1em solid rgb(227, 108, 9);width: 60%;margin: 1em auto 0;">参与方式</p>
+                <div style="width: 30%;height: 0.2em;background: rgb(227, 108, 9);margin: -1px auto 0;"></div>
+                <ul class="description">
+                    <li>
+                        <p>
+                            1.关注<span style="color: rgb(227, 108, 9);">甜橙金融</span>公众号
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            2.上传自拍照一张，回复“单身派对＋姓名＋手机号码”
+                        </p>
+                        <p>
+                            名额有限，先到先得！
+                            <br>
+                            <br>我们将为获得参赛资格的童鞋亲手派送邀请函以及精美礼品
+                        </p>
+                        <p>
+                            记得当天打扮成<em style="font-size: 1.3em; color: #fff; background: #fb966e;">美美帅帅</em>的<strong style="background: #4f4f48; color: #fff; font-size: 1.3em;">复古电影造型</strong>到广州大学商业中心，脱单机会等着你哦～
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </section>
     </div>
-    <footer>
-	    <a href="javascript:;" id="jump" class="jumper animated infinite fadeInUp">
-	    	<img src="images/arrow-up.png" alt="arrow" height="10">
-	    </a>
-    </footer>
     <script type="text/javascript">
-    halo.use('uievent', 'pageinvite', function(m) {
-        var wrap = document.getElementById("wrap");
-        var pager = m.pageinvite.bind(wrap);
-        pager.infinite = false;
-        var jump = document.getElementById("jump");
-        m.on(jump, 'flick', function() {
-            pager.move(0);
+    $(document).ready(function() {
+        $('#jump').on('click', function() {
+            $('#siri').fadeOut(function() {
+                $('#wechat').fadeIn(function() {
+                    (function showMessage() {
+                        var $msg = $('.message[data-type="role"]:hidden').eq(0);
+                        if ($msg.length) {
+                            $msg.fadeIn(function() {
+                                setTimeout(showMessage, 2e3);
+                                $(".chat_list").scrollTop(9999999);
+                            });
+                        } else {
+                            $('._text').show();
+                            $('._form').one('click', function() {
+                                $('._text').hide();
+                                $('.message[data-type="client"]').fadeIn(function() {
+                                    setTimeout(function() {
+                                        $('.message[data-type="host"]').fadeIn();
+                                        $(".chat_list").scrollTop(9999999);
+                                    }, 2e3);
+                                    $(".chat_list").scrollTop(9999999);
+                                });
+                            });
+                        }
+                    })();
+                });
+            });
         });
-        pager.setAuthor("Powered By KingChung");
-        pager.page_change = function(cur, next){
-        	var $page = $('.page').eq(next);
-        	$page.find('._title').removeClass('hide').addClass('animated fadeInLeft');
-        	setTimeout(function(){
-        		$page.find('._description').removeClass('hide').addClass('animated fadeInRight');
-        	}, 1000);
-        }
+
+        $("._sharelink").on("click", function() {
+            $('#wechat').fadeOut(function() {
+                $('#detail').fadeIn(function() {
+			        $('.poem').each(function(i) {
+			            var that = this;
+			            setTimeout(function() {
+			                var top = i * 1;
+			                $(that).animate({
+			                    opacity: 100,
+			                    top: top + 'em'
+			                }, 500);
+			            }, 200 * i);
+			        });
+
+			        $('.poem_content').animate({
+			            opacity: 100,
+			            bottom: "1.5em"
+			        }, 500);
+
+			        (function speaking(){
+			        	var $speaking = $('._speaking:visible'), $toSpeak = $('._speaking:hidden');
+			        	$speaking.fadeOut(function(){
+			        		setTimeout(function(){
+			        			$toSpeak.fadeIn();
+			        			setTimeout(speaking, 1e3);
+			        		}, 1e3);
+			        	});
+			        })();
+                });
+            });
+        });
     });
     </script>
 </body>
