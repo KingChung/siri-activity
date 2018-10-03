@@ -319,6 +319,7 @@
     <script src="js/siriwave.js"></script>
     <script src="js/anime.min.js"></script>
     <script>
+        var SIRICOMPLETED = false;
         // First page
         (function () {
             var siriwave = new SiriWave({
@@ -366,10 +367,16 @@
                         targets: '.siri-result',
                         opacity: 1
                     })
+                
+                SIRICOMPLETED = true
             }
         })()
 
         document.querySelector('.to_wechat').addEventListener('click', function(){
+            if( ! SIRICOMPLETED) {
+                return false
+            }
+
             document.getElementById('siri').remove()
             document.getElementById('wechat').style.display = 'block';
             initWechat()
