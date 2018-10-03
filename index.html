@@ -292,7 +292,7 @@
                 </div>
             </li>
             <li class="chat" onclick="location.href='https://mp.weixin.qq.com/s/9rPgO2Ad2VDDiT_ZQVGU2w'">
-                <div class="media message" data-type="host" >
+                <div class="media message" data-type="host">
                     <a class="media-left" href="javascript:;">
                         <img class="media-object" src="images/yx-avatar.jpg" alt="Image" width="40" height="40">
                     </a>
@@ -311,7 +311,7 @@
                         </div>
                         <div class="time-wrapper" style="text-align: left;">
                             <span class="time">
-                                越秀·星汇瀚府 
+                                越秀·星汇瀚府
                             </span>
                         </div>
                     </div>
@@ -322,89 +322,111 @@
     <script src="js/siriwave.js"></script>
     <script src="js/anime.min.js"></script>
     <script>
-        var SIRICOMPLETED = false;
-        // First page
-        (function () {
-            var siriwave = new SiriWave({
-                amplitude: 1,
-                container: document.getElementById('siri-wave'),
-                autostart: true,
-                style: 'ios9',
-                speed: 0.06,
-                cover: true
-            });
+        window.onload = function () {
+            var SIRICOMPLETED = false;
 
-            var basicTimeline = anime.timeline({
-                targets: '.siri-response p',
-                duration: 2000,
-                easing: 'easeOutExpo',
-                delay: function (el, i) {
-                    return i * 3e3
+            var req = new XMLHttpRequest();
+            req.open('GET', '/videos/siriball.mp4', true);
+            req.responseType = 'blob';
+
+            req.onload = function() {
+                // Onload is triggered even on 404
+                // so we need to check the status code
+                if (this.status === 200) {
+                    var videoBlob = this.response;
+                    var vid = URL.createObjectURL(videoBlob); // IE10+
+                    // Video is now downloaded
+                    // and we can set it as source on the video element
+                    document.getElementById('siri-ball').src = vid;
                 }
-            })
-
-            basicTimeline
-                .add({
-                    opacity: [
-                        { value: 1, duration: 2e3 },
-                        { value: 0, duration: 2e3 }
-                    ],
-                    top: 50,
-                })
-
-            basicTimeline.complete = function () {
-                document.getElementById('siri-wave').remove()
-                document.getElementById('siri-ball').style.display = 'block'
-                document.querySelector('.siri-response').remove()
-
-                var siriTimeline = anime.timeline({
-                    easing: 'easeOutExpo'
-                })
-
-                siriTimeline
-                    .add({
-                        targets: '#siri-ball',
-                        opacity: 1
-                    })
-                    .add({
-                        targets: '.siri-result',
-                        opacity: 1
-                    })
-                
-                SIRICOMPLETED = true
-            }
-        })()
-
-        document.querySelector('.to_wechat').addEventListener('click', function(){
-            if( ! SIRICOMPLETED) {
-                return false
             }
 
-            document.getElementById('siri').remove()
-            document.getElementById('wechat').style.display = 'block';
-            initWechat()
-        })
+            req.send();
 
-        // Wechat
-        function initWechat () {
-            var chatTimeline = anime.timeline({
-                targets: '.chat',
-                duration: 1e3,
-                easing: 'easeOutExpo',
-                delay: function (el, i) {
-                    return i * 2e3
-                }
-            })
+            // First page
+            (function () {
+                var siriwave = new SiriWave({
+                    amplitude: 1,
+                    container: document.getElementById('siri-wave'),
+                    autostart: true,
+                    style: 'ios9',
+                    speed: 0.06,
+                    cover: true
+                });
 
-            chatTimeline
-                .add({
-                    opacity: 1
+                var basicTimeline = anime.timeline({
+                    targets: '.siri-response p',
+                    duration: 2000,
+                    easing: 'easeOutExpo',
+                    delay: function (el, i) {
+                        return i * 3e3
+                    }
                 })
 
-            chatTimeline.complete = function() {
-                document.getElementById('wechat').scrollTop = 9999;
+                basicTimeline
+                    .add({
+                        opacity: [
+                            { value: 1, duration: 2e3 },
+                            { value: 0, duration: 2e3 }
+                        ],
+                        top: 50,
+                    })
+
+                basicTimeline.complete = function () {
+                    document.getElementById('siri-wave').remove()
+                    document.getElementById('siri-ball').style.display = 'block'
+                    document.querySelector('.siri-response').remove()
+
+                    var siriTimeline = anime.timeline({
+                        easing: 'easeOutExpo'
+                    })
+
+                    siriTimeline
+                        .add({
+                            targets: '#siri-ball',
+                            opacity: 1
+                        })
+                        .add({
+                            targets: '.siri-result',
+                            opacity: 1
+                        })
+
+                    SIRICOMPLETED = true
+                }
+            })()
+
+            document.querySelector('.to_wechat').addEventListener('click', function () {
+                if (!SIRICOMPLETED) {
+                    return false
+                }
+
+                document.getElementById('siri').remove()
+                document.getElementById('wechat').style.display = 'block';
+                initWechat()
+            })
+
+            // Wechat
+            function initWechat() {
+                var chatTimeline = anime.timeline({
+                    targets: '.chat',
+                    duration: 1e3,
+                    easing: 'easeOutExpo',
+                    delay: function (el, i) {
+                        return i * 2e3
+                    }
+                })
+
+                chatTimeline
+                    .add({
+                        opacity: 1
+                    })
+
+                chatTimeline.complete = function () {
+                    document.getElementById('wechat').scrollTop = 9999;
+                }
             }
         }
+
     </script>
 </body>
 
