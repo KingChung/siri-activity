@@ -6,10 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome To VDSiri</title>
+    <link rel="stylesheet" href="css/chat.css">
     <style>
         * {
             margin: 0;
             padding: 0;
+        }
+
+        .clearfix::after {
+            content: ' ';
+            display: table;
+            clear: both;
         }
 
         html,
@@ -32,7 +39,7 @@
             width: 100%;
         }
 
-        #container-siri {
+        .container-siri {
             color: #fff;
             background: #050305;
             height: 100%;
@@ -115,16 +122,46 @@
         }
 
         #siri-ball {
+            opacity: 0.8;
             height: 90px;
             width: 90px;
             display: none;
             margin: 0 auto;
             opacity: 0;
         }
+
+        .chat {
+            opacity: 0;
+        }
+
+        .media-left,
+        .media-right,
+        .media-body {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .media-heading {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+
+        .media-left img,
+        .media-right img {
+            width: 3em;
+            height: 3em;
+        }
+
+        .media-body {
+            padding-left: 1em;
+            font-size: 0.8em;
+        }
     </style>
 </head>
+
 <body>
-    <section id="container-siri">
+    <section id="siri" class="container-siri">
         <main class="container">
             <section class="siri-response">
                 <p>请问有什么可以<br>帮到你呢？</p>
@@ -133,7 +170,7 @@
             <section class="siri-result">
                 <p class="user-question">国庆有什么节目？</p>
                 <p class="siri-answer">推荐你一个活动:</p>
-                <div class="card" onclick="redirectToWechat">
+                <div class="card to_wechat">
                     <h3 class="card-heading">
                         <img src="images/wechat.png" alt="WeChat"> 国庆高端聚会VIP交流群
                     </h3>
@@ -145,61 +182,219 @@
                     </div>
                 </div>
             </section>
-
         </main>
         <footer>
             <div id="siri-wave" class="siri-animation"></div>
             <video id="siri-ball" class="siri-animation" src="videos/siriball.mp4" autoplay loop></video>
         </footer>
     </section>
+    <section id="wechat" class="container-wechat" style="display: none;">
+        <ul class="chat-list chat_list">
+            <li>
+                <div class="time-wrapper">
+                    <span class="time">下午 14:00</span>
+                </div>
+            </li>
+            <li class="chat">
+                <div class="media message" data-type="role">
+                    <a class="media-left" href="javascript:;">
+                        <img class="media-object" src="images/zxx.jpg" alt="Image" width="40" height="40">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading name">周星星</h4>
+                        <span class="arrow arrow-left"></span>
+                        <p class="content">曾经，有一个开放活动邀请摆在我的面前，我没有珍惜。直到我失去以后，才追悔莫及，人世间最大的痛苦莫过如此。</p>
+                    </div>
+                </div>
+            </li>
+            <li class="chat">
+                <div class="media message" data-type="role">
+                    <a class="media-left" href="javascript:;">
+                        <img class="media-object" src="images/zx.jpg" alt="Image" width="40" height="40">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading name">紫霞BB</h4>
+                        <span class="arrow arrow-left"></span>
+                        <p class="content">
+                            星星，这次由<strong>越秀·星汇瀚府</strong>举办的开放活动就不要错过啦，我也会出现喔！
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="chat">
+                <div class="media message" data-type="role">
+                    <a class="media-left" href="javascript:;">
+                        <img class="media-object" src="images/sam.jpg" alt="Image" width="40" height="40">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading name">SamGor</h4>
+                        <span class="arrow arrow-left"></span>
+                        <p class="content">
+                            Wait for me~
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="chat">
+                <div class="media message" data-type="role">
+                    <a class="media-left" href="javascript:;">
+                        <img class="media-object" src="images/molly.jpg" alt="Image" width="40" height="40">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading name">Molly</h4>
+                        <span class="arrow arrow-left"></span>
+                        <p class="content">
+                            Sam Gor, 我们开放活动再唱吧～
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="chat">
+                <div class="media message" data-type="role">
+                    <a class="media-left" href="javascript:;">
+                        <img class="media-object" src="images/jack.jpg" alt="Image" width="40" height="40">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading name">杰克Jack</h4>
+                        <span class="arrow arrow-left"></span>
+                        <p class="content">
+                            Rose, 你去<strong>越秀·星汇瀚府</strong>开放活动对吗？
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="chat">
+                <div class="media message" data-type="role">
+                    <a class="media-left" href="javascript:;">
+                        <img class="media-object" src="images/rose.jpg" alt="Image" width="40" height="40">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading name">Rose</h4>
+                        <span class="arrow arrow-left"></span>
+                        <p class="content">
+                            去！去！去！（重要的事情说三遍）
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="clearfix chat" style="margin-bottom: 1em;">
+                <div class="media message my-message" data-type="client">
+                    <a class="media-right" href="javascript:;">
+                        <img class="media-object" src="images/wp.jpg" alt="Image" width="40" height="40">
+                    </a>
+                    <div class="media-body">
+                        <span class="arrow arrow-right"></span>
+                        <p class="content">我也要参加！！</p>
+                    </div>
+                </div>
+            </li>
+            <li class="chat" onclick="location.href='https://mp.weixin.qq.com/s/9rPgO2Ad2VDDiT_ZQVGU2w'">
+                <div class="media message" data-type="host" >
+                    <a class="media-left" href="javascript:;">
+                        <img class="media-object" src="images/yx-avatar.jpg" alt="Image" width="40" height="40">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading name">越秀·星汇瀚府</h4>
+                        <div class="sharelink content _sharelink">
+                            <h4 class="media-heading">国庆越秀·星汇瀚府开放活动</h4>
+                            <div class="media">
+                                <a class="media-left" href="javascript:;">
+                                    <img src="images/yx-avatar.JPG" alt="YueXiu">
+                                </a>
+                                <div class="media-body">
+                                    <p>国庆越秀·星汇瀚府开放活动约你来一起共度欢乐时光!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-wrapper" style="text-align: left;">
+                            <span class="time">
+                                越秀·星汇瀚府 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
     <script src="js/siriwave.js"></script>
     <script src="js/anime.min.js"></script>
     <script>
-        var siriwave = new SiriWave({
-            amplitude: 1,
-            container: document.getElementById('siri-wave'),
-            autostart: true,
-            style: 'ios9',
-            speed: 0.06,
-            cover: true
-        });
+        // First page
+        (function () {
+            var siriwave = new SiriWave({
+                amplitude: 1,
+                container: document.getElementById('siri-wave'),
+                autostart: true,
+                style: 'ios9',
+                speed: 0.06,
+                cover: true
+            });
 
-        var basicTimeline = anime.timeline({
-            targets: '.siri-response p',
-            duration: 2000,
-            easing: 'easeOutExpo',
-            delay: function (el, i) {
-                return i * 3e3
+            var basicTimeline = anime.timeline({
+                targets: '.siri-response p',
+                duration: 2000,
+                easing: 'easeOutExpo',
+                delay: function (el, i) {
+                    return i * 3e3
+                }
+            })
+
+            basicTimeline
+                .add({
+                    opacity: [
+                        { value: 1, duration: 2e3 },
+                        { value: 0, duration: 2e3 }
+                    ],
+                    top: 50,
+                })
+
+            basicTimeline.complete = function () {
+                document.getElementById('siri-wave').remove()
+                document.getElementById('siri-ball').style.display = 'block'
+                document.querySelector('.siri-response').remove()
+
+                var siriTimeline = anime.timeline({
+                    easing: 'easeOutExpo'
+                })
+
+                siriTimeline
+                    .add({
+                        targets: '#siri-ball',
+                        opacity: 1
+                    })
+                    .add({
+                        targets: '.siri-result',
+                        opacity: 1
+                    })
             }
+        })()
+
+        document.querySelector('.to_wechat').addEventListener('click', function(){
+            document.getElementById('siri').remove()
+            document.getElementById('wechat').style.display = 'block';
+            initWechat()
         })
 
-        basicTimeline
-            .add({
-                opacity: [
-                    { value: 1, duration: 2e3 },
-                    { value: 0, duration: 2e3 }
-                ],
-                top: 50,
+        // Wechat
+        function initWechat () {
+            var chatTimeline = anime.timeline({
+                targets: '.chat',
+                duration: 1e3,
+                easing: 'easeOutExpo',
+                delay: function (el, i) {
+                    return i * 2e3
+                }
             })
 
-        basicTimeline.complete = function () {
-            document.getElementById('siri-wave').remove()
-            document.getElementById('siri-ball').style.display = 'block'
-
-            var siriTimeline = anime.timeline({
-                easing: 'easeOutExpo'
-            })
-
-            siriTimeline
+            chatTimeline
                 .add({
-                    targets: '#siri-ball',
                     opacity: 1
                 })
-                .add({
-                    targets: '.siri-result',
-                    opacity: 1
-                })
-        } 
+
+            chatTimeline.complete = function() {
+                document.getElementById('wechat').scrollTop = 9999;
+            }
+        }
     </script>
 </body>
 

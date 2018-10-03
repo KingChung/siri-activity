@@ -7,15 +7,15 @@
     height: 100%;
     width: 100%;
     background: #ebebeb;
-    padding-top: 0.5em;
+    padding-top: 0.5rem;
     padding-left: 0;
-    font-size: 3em;
+    font-size: 0.9rem;
+    overflow: auto;
 }
 
 .chat-list {
     list-style: none;
-    padding: 0 0.8em;
-    height: 80%;
+    padding: 30px 15px;
     overflow-y: scroll;
 }
 
@@ -35,7 +35,7 @@
 
 .chat-list .message {
     margin-bottom: 0.8em;
-    display: none;
+    position: relative;
 }
 
 .chat-list .message .name {
@@ -52,7 +52,7 @@
     padding: 0.6em 0.5em;
     background: #fff;
     border-radius: 0.3em;
-    font-size: 1.1em;
+    font-size: 1rem;
 }
 
 .chat-list .message .image img {
@@ -103,6 +103,10 @@
 
 .message.my-message .arrow-right:after {
     border-left-color: #b2e281;
+}
+
+.message.my-message .media {
+    position: relative;
 }
 
 .message.my-message .media-body {
