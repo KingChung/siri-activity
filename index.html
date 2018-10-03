@@ -123,8 +123,7 @@
 
         #siri-ball {
             opacity: 0.8;
-            height: 90px;
-            width: 90px;
+            width: 110px;
             display: none;
             margin: 0 auto;
             opacity: 0;
@@ -185,10 +184,9 @@
         </main>
         <footer>
             <div id="siri-wave" class="siri-animation"></div>
-            <video id="siri-ball" class="siri-animation" autoplay loop>
-                <img src="images/siri-ball.png" alt="Siri Ball" style="width: 80px; height: 80px;">
-                <source src="videos/siriball.mp4" type="video/mp4" />
-            </video>
+            <div id="siri-ball">
+                <img src="images/siri-ball.gif" alt="Siri Ball" style="width: 100%;">
+            </div>
         </footer>
     </section>
     <section id="wechat" class="container-wechat" style="display: none;">
@@ -325,24 +323,6 @@
         window.onload = function () {
             var SIRICOMPLETED = false;
 
-            var req = new XMLHttpRequest();
-            req.open('GET', '/videos/siriball.mp4', true);
-            req.responseType = 'blob';
-
-            req.onload = function() {
-                // Onload is triggered even on 404
-                // so we need to check the status code
-                if (this.status === 200) {
-                    var videoBlob = this.response;
-                    var vid = URL.createObjectURL(videoBlob); // IE10+
-                    // Video is now downloaded
-                    // and we can set it as source on the video element
-                    document.getElementById('siri-ball').src = vid;
-                }
-            }
-
-            req.send();
-
             // First page
             (function () {
                 var siriwave = new SiriWave({
@@ -395,7 +375,7 @@
                 }
             })()
 
-            document.querySelector('.to_wechat').addEventListener('click', function () {
+            document.addEventListener('click', function () {
                 if (!SIRICOMPLETED) {
                     return false
                 }
